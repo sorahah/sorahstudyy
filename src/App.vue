@@ -1,22 +1,27 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <testTxt :username="username" :numberOfVisit="numberOfVisit" />
+  <ul>
+    <listfor :item="item"/>
+  </ul>
 </template>
-
+<script >
+import testTxt from './components/testtxt.vue';
+import listfor from './components/listfor.vue';
+export default {
+    name:"App",
+    components:{
+      testTxt,
+      listfor
+    },
+    data(){
+      return{
+        username: "뿡뿡",
+        numberOfVisit: 20,
+        item:['치킨','피자','불닭']
+      }
+    }
+}
+</script>
 <style scoped>
 header {
   line-height: 1.5;
